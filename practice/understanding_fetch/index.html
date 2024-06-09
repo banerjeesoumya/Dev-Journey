@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function getAnimalData() {
+        //     //fetch is an asynchronous call, thus we are doing '.then' to make it clear that after promise is reolved it will refer to code which is under the '.then'
+        //     fetch("https://fakerapi.it/api/v1/persons")
+        //     .then(function(response){
+        //         response.json()
+        //         // similary the response which we are getting in the json format that too is an asynchronous call thus we have to add a .then after that to ensure the code gets executed under that when the promise is resolved 
+        //         .then(function(finalData){
+        //             console.log(finalData);
+        //         })
+        //     })
+        // }
+        async function getAnimalData() {
+            const response = await fetch("https://fakerapi.it/api/v1/persons");
+            const finalData = await response.json()
+            console.log(finalData);
+        }
+    </script>
+    <button onclick="getAnimalData()">Get Animal Data</button>
+</body>
+</html>

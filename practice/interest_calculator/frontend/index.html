@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Principal Amount" id="principal"></input>
+    <br></br>
+    <input type="text" placeholder="Rate of Interest" id="rate"></input>
+    <br></br>
+    <input type="text" placeholder="Time" id="time"></input>
+    <br></br>
+    <button onclick="calculateInterest()">Calculate Interest</button>
+    <br></br>
+    <div id = "res"></div>
+
+    <script>
+        async function calculateInterest() {
+            const a = document.getElementById("principal").value;
+            const b = document.getElementById("rate").value;
+            const c = document.getElementById("time").value;
+
+            const res = await fetch ("http://localhost:3003/interest?principal=" + a + "&rate=" + b + "&time=" + c);
+            const output = await res.text();
+
+            document.getElementById("res").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
