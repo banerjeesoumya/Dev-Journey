@@ -7,10 +7,10 @@ app.use(express.json());
 const client = createClient();
 client.connect();
 
-app.post("/submit", (req, res) => {
+app.post("/submit", async (req, res) => {
     const {problemId, userId, code, language} = req.body;
 
-    client.lPush("submissions", JSON.stringify({
+    await client.lPush("submissions", JSON.stringify({
         problemId,
         userId,
         code,
@@ -21,4 +21,4 @@ app.post("/submit", (req, res) => {
     })
 })
 
-app.listen(3001)
+app.listen(3000)
