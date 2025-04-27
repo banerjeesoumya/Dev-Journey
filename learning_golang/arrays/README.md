@@ -33,6 +33,7 @@ func main() {
 	fmt.Println("Sum of array elements is:", sum) 
 }
 ```
+---
 
 2-D Array :
 
@@ -51,3 +52,4 @@ func main() {
 	fmt.Println()
 }
 ```
+---
