@@ -1,1 +1,1 @@
-![Working](/assets/Working.png)
+![Working](Working.png)
